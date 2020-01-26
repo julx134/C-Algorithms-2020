@@ -14,14 +14,15 @@ static unsigned int moveNumber = 0;
 void towers(unsigned int n, unsigned int from, unsigned int dest)
 {
     unsigned int spare = 6 - from - dest;
-    showRecursionDepth();
-    fprintf(stderr, "towers(%d, %d, %d)\n", n, from, dest);
-    depth++;
+    //showRecursionDepth();
+    //fprintf(stderr, "towers(%d,%d,%d)\n", n, from, dest);
+    //depht++;
+
     if (n != 0) {
         towers(n-1, from, spare);
-        showRecursionDepth();
-        fprintf(stderr, "Move #%d: From Tower %d to Tower %d\n", ++moveNumber, from, dest);
-        printf("%d %d\n", from, dest);
+	//showRecursionDepth();
+	//fprintf(stderr, "move #%d: From Tower %d to Tower %d\n", ++moveNumber, from, dest);
+	printf("FromTower%d to ToTower%d\n", from, dest);
         towers(n-1, spare, dest);
     }
     depth--;
