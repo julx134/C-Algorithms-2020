@@ -10,7 +10,7 @@ void mySort(int array[], unsigned int first, unsigned int last)
 	//temp = array[iC];
      
 	while (dC >= first && myCompare(temp,array[dC]) < 0) {
-	  mySwap(&array[dC],&array[dC+1]); 
+	  myCopy(&array[dC],&array[dC+1]); 
 	  // array[dC+1] = array[dC];
 	  dC--;
 	}

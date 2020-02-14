@@ -1,29 +1,67 @@
-Everything in the lab worked as intended.
+This project is an applicable way of testing the complexity of the insertion and merge sort algorithims.
+It uses the metrics framework that will check for the number of copies,swaps and comparisons when the code is ran.
+In order to run the project:
+1) Cd into the folder containing the project files
+2) Enter the command 'make'
+3) Enter the command 'insertionSort < "arrayFile.txt"' or 'mergeSort < "arrayFile.txt"'
 
-However, note that for the swap metric because there was difference in implementing of the algorithm,
-I only used myCopy() and not mySwap(). Regardless, the number of swaps and copies correspond to the 
-analysis of the complexity of the algorithm and having the analysis be entirely driven by the
-myCopy() metric, is the same as analyzing the algorithm with myCopy() and mySwap() metric.
+Note that the array is contained within the files 'algorithm'Best.txt,'algorithm'Worst.txt and 'algorithm'Average.txt. 
+As the name suggests, those files contain the arrays sorted in a way that correspond to the performance of the algorithm.
+
+In addition, note that for the swap metric because there was difference in implementing of the algorithm,I only used myCopy() and not mySwap(). 
+Regardless, the sum of swaps and copies correspond to the complexity of the algorithm.
+Having the analysis be entirely driven by the myCopy() metric, is the same as analyzing the algorithm with myCopy() and mySwap() metric.
 
 In addition, the comparison metric is not part of the analysis, but I derived an equation for the sake of it.
 This is because in analyzing algorithms, comparing values does not require any steps or 'n', and so
 it is left out.
 
-Also note that the array is contained within the files array_Best.txt,array_Worst.txt and array_Average.txt. 
-As the name suggests, those files contain the arrays sorted in a way that correspond to the performance of the algorithm.
 
 The algorithm analysis and equations are shown below:
 
 InsertionSort:
 
-Worst Case:
-Comparisons+Swaps = n^2 -1
+	Worst Case:
+	Copy+Swap operations = n^2 -cn -c ==> n^2
+	Comparison operations = n + c ==> n
 
-Best Case:
-Comparisons+Swaps = n-1
+	Average Case:
+	Copy+Swap operations = n^2 -cn -c ==> n^2
+	Comparison operations = n + c ==> n
+
+	Best Case:
+	Copy+Swap operations = cn - c ==> n
+	Comparison operations = n - c ==> n
+
+In the analysis of the insertion sort algorithm, I changed the values of the array size, n, and checked
+to see the growth of the copy(+swaps) and comparison operations. While it is definitely
+possible to find the values of the coefficient, c, in order to find the equation for the metrics - 
+it is better to look at the analysis in terms of large values of n. Therefore,
+I can drop the other terms when looking at the growth perspective of the algorithm to represent
+the analysis which is dictated by the equation after the '==>' arrow.
+
+From this I conclude that the insertion sort algorithm has a complexity of n^2 for both worst case and average case and
+a complexity of n for the best case.
 
 Merge-Sort:
 
-Worse Case:
+	Worst Case:
+	Copy+Swap operations = (cn + (n+2))(log n) ==> nlogn
+	Comparison operations = n^2 -1 ==> n^2
 
-Best Case:
+	Average Case:
+	Copy+Swap operations = (cn + (n+2))(log n) ==> nlogn
+	Comparison operations = n^2 -1 ==> n^2
+
+	Best Case:
+	Copy+Swap operations = (cn + (n+2))(logn) ==> nlogn
+	Comparison operations = n^2 -1 ==> n^2
+
+The analysis of the merge sort algorithm was similar to the steps I took for the insertion sort algorithm.
+In looking at the different cases of n for merge sort, I found that there was a similarity in growth for all
+cases that is, the equation is nlogn. This in particular, is due to the implementation of the algorithim, because
+regardless of the array given, this implementation will sort the sub-arrays regardless of the order. It is also
+important to note that the actual recurssion call of the algorithm does not take any steps or 'n' but rather
+the other elementary steps that follows after the recurssion.
+
+From this I conclude that the merge sort algorithm has an nlogn complexity for best,worst and average cases.
