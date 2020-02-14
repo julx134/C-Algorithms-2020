@@ -1,0 +1,29 @@
+Everything in the lab worked as intended.
+
+However, note that for the swap metric because there was difference in implementing of the algorithm,
+I only used myCopy() and not mySwap(). Regardless, the number of swaps and copies correspond to the 
+analysis of the complexity of the algorithm and having the analysis be entirely driven by the
+myCopy() metric, is the same as analyzing the algorithm with myCopy() and mySwap() metric.
+
+In addition, the comparison metric is not part of the analysis, but I derived an equation for the sake of it.
+This is because in analyzing algorithms, comparing values does not require any steps or 'n', and so
+it is left out.
+
+Also note that the array is contained within the files array_Best.txt,array_Worst.txt and array_Average.txt. 
+As the name suggests, those files contain the arrays sorted in a way that correspond to the performance of the algorithm.
+
+The algorithm analysis and equations are shown below:
+
+InsertionSort:
+
+Worst Case:
+Comparisons+Swaps = n^2 -1
+
+Best Case:
+Comparisons+Swaps = n-1
+
+Merge-Sort:
+
+Worse Case:
+
+Best Case:
