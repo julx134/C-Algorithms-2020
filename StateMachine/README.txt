@@ -1,3 +1,5 @@
+This project implements a state machine and different specifications for it - see ProjectSpecification file.
+
 Everything in the project worked fine. However, note that when starting the program, a warning expression will show.
 This is fine, the code still works regardless.
 
