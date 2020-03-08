@@ -1,11 +1,5 @@
-
-
-
-
-
 Everything in the project worked fine. However, note that when starting the program, a warning expression will show.
 This is fine, the code still works regardless.
-
 
 Note that the user must seperate the command arguments and capitalize all state characters.
 This is because the UI is built in a way to accomodate the space character i.e. typing 'c0C' will not work and 'c 0 C' will work.
